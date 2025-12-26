@@ -1,0 +1,64 @@
+body {
+  background: linear-gradient(to right, #a8d8e8, #e0f7fa);
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100vh;
+  font-size: 0.9rem;
+}
+@media (max-width: 576px) {
+  body {
+    font-size: 0.9rem;
+  }
+  h1 {
+    font-size: 1.25rem;
+  }
+  h2 {
+    font-size: 1.1rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+}
+h1 {
+  font-size: 1.5rem;
+}
+h2 {
+  font-size: 1.25rem;
+}
+h3 {
+  font-size: 1rem;
+}
+p {
+  font-size: 0.9rem;
+}
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.navbar {
+  z-index: 9999;
+}
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+}
+.contact-form {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+}
+input,
+textarea {
+  font-size: 1rem;
+}
+.section-container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+h2.section-title {
+  margin-top: 3rem;
+}
