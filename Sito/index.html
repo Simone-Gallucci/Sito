@@ -77,14 +77,14 @@
                 <h3 class="mt-4 mb-3">Formazione</h3>
                 <div class="mb-3" v-for="(edu, index) in about.education" :key="index">
                   <h5>{{ edu.title }}</h5>
-                  <p>{{ edu.description }}</p>
+                  <p>{{ edu.where }}</p>
                   <p><em>{{ edu.since }}</em></p>
                 </div>
 
                 <h3 class="mt-4 mb-3">Esperienza</h3>
                 <div class="mb-3" v-for="(exp, index) in about.experience" :key="index">
                   <h5>{{ exp.title }}</h5>
-                  <p>{{ exp.description }}</p>
+                  <p>{{ exp.where }}</p>
                   <p><em>{{ exp.since }}</em></p>
                 </div>
               </div>

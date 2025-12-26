@@ -6,39 +6,39 @@ createApp({
       currentSection: 'home',
       home: {
         title: 'Ciao, sono Simone Gallucci',
-        subtitle: 'Sono uno sviluppatore frontend e backend(Full stack).',
+        subtitle: 'Sono un ragazzo appassionato di informatica e tecnologia.',
         buttonText: 'Contattami'
       },
       about: {
         title: 'Chi Sono',
         image: 'ME.jpg',
-        description: 'Sono Simone, uno sviluppatore web con competenze nelle tecnologie frontend e backend moderne.',
+        description: 'Sono Simone Gallucci, un giovane appassionato di informatica e tecnologia. Amo esplorare nuove tecnologie e migliorare le mie competenze nel campo della programmazione e della sicurezza informatica.',
         education: [
           {
             title: 'Istituto Tecnico Industriale - Indirizzo Informatico',
-            description: 'Diploma di Istruzione Tecnica, 5 anni',
+            where: 'Diploma di Istruzione Tecnica, 5 anni',
             since: '2019 - 2024'
           },
           {
             title: 'ITS - ICT & Cyber Security',
-            description: 'Corso biennale post-diploma in ambito informatico',
+            where: 'Corso biennale post-diploma in ambito informatico',
             since: '2024 - 2026'
           }
         ],
         experience: [
           {
             title: 'Tecnico',
-            description: 'Centro Sportivo MTA',
+            where: 'Centro Sportivo MTA',
             since: '2023 - 2024'
           },
           {
             title: 'Stage',
-            description: 'LogicalSystem',
+            where: 'LogicalSystem',
             since: 'Estate 2025'
           },
           {
             title: 'Lavoro',
-            description: 'LogicalSystem',
+            where: 'LogicalSystem',
             since: '2026 - Presente'
           }
         ]
