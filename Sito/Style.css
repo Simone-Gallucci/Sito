@@ -102,3 +102,13 @@ footer {
   width: 100%;
   z-index: 1000;
 }
+
+.about-img {
+  width: 75%;
+}
+
+@media (max-width: 576px) {
+  .about-img {
+    width: 45%;
+  }
+}
