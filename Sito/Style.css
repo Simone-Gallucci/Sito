@@ -1,12 +1,19 @@
 body {
   background: linear-gradient(to right, #a8d8e8, #e0f7fa);
   overflow: hidden;
+  overflow-x: hidden;
   height: 100vh;
   font-size: 0.9rem;
+  padding-bottom: 60px;
 }
 @media (max-width: 576px) {
   body {
     font-size: 0.9rem;
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 80px;
   }
   h1 {
     font-size: 1.25rem;
@@ -67,7 +74,8 @@ textarea {
 }
 .section-container {
   padding-top: 0rem;
-  padding-bottom: 0rem;
+  padding-bottom: 3rem;
+  margin-bottom: 0rem;
 }
 h2.section-title {
   margin-top: 0rem;
