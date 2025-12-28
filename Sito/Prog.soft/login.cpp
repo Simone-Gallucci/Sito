@@ -30,12 +30,13 @@ int main() {
     // 1. Creiamo una lista (vector) di utenti
     vector<Users> list;
     list.push_back(Users("Szymon", "Szymon05", "admin"));
-    list.push_back(Users("Mario", "123", "user"));
+    list.push_back(Users("Simone", "Simone05", "user"));
+    list.push_back(Users("simone", "simone05", "guest"));
 
     // 2. Chiediamo i dati all'utente
     string loginname, loginPass;
     bool trovato = false;
-
+    cout << "=== Login ===" << endl;
     // Continua a chiedere finché non trova l'utente
     while (!trovato) {
         richiediCredenziali(loginname, loginPass);

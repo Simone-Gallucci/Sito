@@ -1,53 +1,53 @@
-def addizione(a, b):
+def addition(a, b):
     return a + b
 
-def sottrazione(a, b):
+def subtraction(a, b):
     return a - b
 
-def moltiplicazione(a, b):
+def multiplication(a, b):
     return a * b
 
-def divisione(a, b):
+def division(a, b):
     if b == 0:
-        return "Errore: divisione per zero"
+        return "Error: division by zero"
     return a / b
 
-def potenza(a, b):
+def power(a, b):
     return a ** b
 
-def calcolatrice():
-    print("=== CALCOLATRICE ===")
-    print("Operazioni disponibili:")
-    print("1. Addizione (+)")
-    print("2. Sottrazione (-)")
-    print("3. Moltiplicazione (*)")
-    print("4. Divisione (/)")
-    print("5. Potenza (^)")
-    print("6. Esci")
+def calculator():
+    print("=== CALCULATOR ===")
+    print("Available operations:")
+    print("1. Addition (+)")
+    print("2. Subtraction (-)")
+    print("3. Multiplication (*)")
+    print("4. Division (/)")
+    print("5. Power (^)")
+    print("6. Exit")
     
     while True:
-        scelta = input("\nScegli un'operazione (0-5): ")
+        choice = input("\nChoose an operation (0-5): ")
         
-        if scelta == '0':
-            print("Arrivederci!")
+        if choice == '0':
+            print("Goodbye!")
             break
         
-        if scelta in ['1', '2', '3', '4', '5']:
-            num1 = float(input("Inserisci il primo numero: "))
-            num2 = float(input("Inserisci il secondo numero: "))
+        if choice in ['1', '2', '3', '4', '5']:
+            num1 = float(input("Enter the first number: "))
+            num2 = float(input("Enter the second number: "))
             
-            if scelta == '1':
-                print(f"Risultato: {num1} + {num2} = {addizione(num1, num2)}")
-            elif scelta == '2':
-                print(f"Risultato: {num1} - {num2} = {sottrazione(num1, num2)}")
-            elif scelta == '3':
-                print(f"Risultato: {num1} * {num2} = {moltiplicazione(num1, num2)}")
-            elif scelta == '4':
-                print(f"Risultato: {num1} / {num2} = {divisione(num1, num2)}")
-            elif scelta == '5':
-                print(f"Risultato: {num1} ^ {num2} = {potenza(num1, num2)}")
+            if choice == '1':
+                print(f"Result: {num1} + {num2} = {addition(num1, num2)}")
+            elif choice == '2':
+                print(f"Result: {num1} - {num2} = {subtraction(num1, num2)}")
+            elif choice == '3':
+                print(f"Result: {num1} * {num2} = {multiplication(num1, num2)}")
+            elif choice == '4':
+                print(f"Result: {num1} / {num2} = {division(num1, num2)}")
+            elif choice == '5':
+                print(f"Result: {num1} ^ {num2} = {power(num1, num2)}")
         else:
-            print("Scelta non valida. Riprova.")
+            print("Invalid choice. Please try again.")
 
 if __name__ == "__main__":
-    calcolatrice()
+    calculator()
