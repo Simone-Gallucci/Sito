@@ -6,6 +6,14 @@ body {
   font-size: 0.9rem;
   padding-bottom: 150px;
 }
+
+/* Prog.Soft page - enable scrollbar */
+body.prog-soft-body {
+  overflow: auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 @media (max-width: 576px) {
   body {
     font-size: 0.9rem;
@@ -77,10 +85,20 @@ textarea {
   padding-bottom: 8rem;
   margin-bottom: 2rem;
 }
+
+/* Extra padding for Prog.Soft page with 2x2 grid */
+.projects-section.section-container {
+  padding-bottom: 12rem;
+}
+
 @media (max-width: 576px) {
   .section-container {
     padding-bottom: 10rem;
     margin-bottom: 3rem;
+  }
+  
+  .projects-section.section-container {
+    padding-bottom: 15rem;
   }
 }
 h2.section-title {
