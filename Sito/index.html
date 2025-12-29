@@ -49,11 +49,11 @@
         <!-- Home -->
         <section v-if="currentSection === 'home'" class="section-container home-section fade-in">
           <div class="container">
-            <div class="row align-items-center" style="height: 85vh;">
+            <div class="row align-items-center section-row">
               <div class="col-lg-6">
-                <h1 class="display-3 fw-bold">Ciao, sono Simone Gallucci</h1>
-                <p class="lead">Sono un ragazzo appassionato di informatica e tecnologia.</p>
-                <button class="btn btn-primary btn-lg mt-3" @click="currentSection = 'contact'">Contattami</button>
+                <h1 class="display-3 fw-bold">{{ home.title }}</h1>
+                <p class="lead">{{ home.subtitle }}</p>
+                <button class="btn btn-primary btn-lg mt-3" @click="currentSection = 'contact'">{{ home.buttonText }}</button>
               </div>
             </div>
           </div>
@@ -62,44 +62,29 @@
         <!-- About -->
         <section v-if="currentSection === 'about'" class="section-container about-section fade-in">
           <div class="container">
-            <div class="row" style="height: 85vh;">
+            <div class="row section-row">
               <div class="col-12 text-center mb-1">
-                <h2 class="section-title">Chi Sono</h2>
+                <h2 class="section-title">{{ about.title }}</h2>
                 <div class="divider mx-auto"></div>
               </div>
               <div class="col-lg-5">
-                <img src="ME.jpg" alt="Chi Sono" class="img-fluid rounded shadow about-img" style="border: 2px solid black;">
+                <img :src="about.image" :alt="about.title" class="img-fluid rounded shadow about-img">
               </div>
               <div class="col-lg-7">
-                <p style="margin-bottom: 0.5rem;">Sono Simone Gallucci, un giovane appassionato di informatica e tecnologia. Amo esplorare nuove tecnologie e migliorare le mie competenze nel campo della programmazione e dell'elettronica.</p>
+                <p class="about-description">{{ about.description }}</p>
 
                 <h3 class="mt-2 mb-1">Formazione</h3>
-                <div class="mb-2">
-                  <h5 style="margin-bottom: 0.2rem;">Istituto Tecnico Industriale - Indirizzo Informatico</h5>
-                  <p style="margin-bottom: 0.1rem;">Diploma di Istruzione Tecnica, 5 anni</p>
-                  <p style="margin-bottom: 0;"><em>2019 - 2024</em></p>
-                </div>
-                <div class="mb-2">
-                  <h5 style="margin-bottom: 0.2rem;">ITS - ICT & Cyber Security</h5>
-                  <p style="margin-bottom: 0.1rem;">Corso biennale post-diploma in ambito informatico</p>
-                  <p style="margin-bottom: 0;"><em>2024 - 2026</em></p>
+                <div class="mb-2" v-for="edu in about.education" :key="edu.title">
+                  <h5 class="info-title">{{ edu.title }}</h5>
+                  <p class="info-description">{{ edu.description }}</p>
+                  <p class="info-date"><em>{{ edu.since }}</em></p>
                 </div>
 
                 <h3 class="mt-2 mb-1">Esperienza</h3>
-                <div class="mb-2">
-                  <h5 style="margin-bottom: 0.2rem;">Tecnico</h5>
-                  <p style="margin-bottom: 0.1rem;">Centro Sportivo MTA</p>
-                  <p style="margin-bottom: 0;"><em>2023 - 2024</em></p>
-                </div>
-                <div class="mb-2">
-                  <h5 style="margin-bottom: 0.2rem;">Stage</h5>
-                  <p style="margin-bottom: 0.1rem;">LogicalSystem</p>
-                  <p style="margin-bottom: 0;"><em>Estate 2025</em></p>
-                </div>
-                <div class="mb-2">
-                  <h5 style="margin-bottom: 0.2rem;">Lavoro</h5>
-                  <p style="margin-bottom: 0.1rem;">LogicalSystem</p>
-                  <p style="margin-bottom: 0;"><em>Fine 2025 - Presente</em></p>
+                <div class="mb-2" v-for="exp in about.experience" :key="exp.title">
+                  <h5 class="info-title">{{ exp.title }}</h5>
+                  <p class="info-description">{{ exp.description }}</p>
+                  <p class="info-date"><em>{{ exp.since }}</em></p>
                 </div>
               </div>
             </div>
@@ -108,10 +93,10 @@
 
         <!-- Skills -->
         <section v-if="currentSection === 'skills'" class="section-container skills-section fade-in">
-          <div class="container" style="height: 85vh; display: flex; flex-direction: column;">
-            <div class="row" style="padding-top: 60px;">
+          <div class="container section-flex-container">
+            <div class="row section-header-row">
               <div class="col-12 text-center mb-3">
-                <h2 class="section-title">Le Mie Competenze</h2>
+                <h2 class="section-title">{{ skills.title }}</h2>
                 <div class="divider mx-auto"></div>
               </div>
             </div>
@@ -120,40 +105,13 @@
               <div class="col-md-6 mb-3">
                 <h3 class="mb-3 text-center">Competenze Tecniche</h3>
 
-                <div class="skill-item mb-2">
+                <div class="skill-item mb-2" v-for="skill in skills.technical" :key="skill.name">
                   <div class="d-flex justify-content-between">
-                    <h5>HTML/CSS/JavaScript</h5>
-                    <span>95%</span>
+                    <h5>{{ skill.name }}</h5>
+                    <span>{{ skill.level }}%</span>
                   </div>
                   <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 95%"></div>
-                  </div>
-                </div>
-                <div class="skill-item mb-2">
-                  <div class="d-flex justify-content-between">
-                    <h5>C/C++/C#</h5>
-                    <span>90%</span>
-                  </div>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 90%"></div>
-                  </div>
-                </div>
-                <div class="skill-item mb-2">
-                  <div class="d-flex justify-content-between">
-                    <h5>Python</h5>
-                    <span>85%</span>
-                  </div>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 85%"></div>
-                  </div>
-                </div>
-                <div class="skill-item mb-2">
-                  <div class="d-flex justify-content-between">
-                    <h5>Windows/Linux</h5>
-                    <span>90%</span>
-                  </div>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 90%"></div>
+                    <div class="progress-bar" role="progressbar" :style="{width: skill.level + '%'}"></div>
                   </div>
                 </div>
               </div>
@@ -161,31 +119,13 @@
               <div class="col-md-6 mb-3">
                 <h3 class="mb-3 text-center">Competenze Professionali</h3>
 
-                <div class="skill-item mb-2">
+                <div class="skill-item mb-2" v-for="skill in skills.professional" :key="skill.name">
                   <div class="d-flex justify-content-between">
-                    <h5>Problem Solving</h5>
-                    <span>95%</span>
+                    <h5>{{ skill.name }}</h5>
+                    <span>{{ skill.level }}%</span>
                   </div>
                   <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 95%"></div>
-                  </div>
-                </div>
-                <div class="skill-item mb-2">
-                  <div class="d-flex justify-content-between">
-                    <h5>Lavoro di Squadra</h5>
-                    <span>90%</span>
-                  </div>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 90%"></div>
-                  </div>
-                </div>
-                <div class="skill-item mb-2">
-                  <div class="d-flex justify-content-between">
-                    <h5>Gestione Progetti</h5>
-                    <span>85%</span>
-                  </div>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 85%"></div>
+                    <div class="progress-bar" role="progressbar" :style="{width: skill.level + '%'}"></div>
                   </div>
                 </div>
               </div>
@@ -195,60 +135,27 @@
 
         <!-- Progetti -->
         <section v-if="currentSection === 'projects'" class="section-container projects-section fade-in">
-          <div class="container" style="height: 85vh; display: flex; flex-direction: column;">
-            <div class="row" style="padding-top: 60px;">
+          <div class="container section-flex-container">
+            <div class="row section-header-row">
               <div class="col-12 text-center mb-3">
                 <h2 class="section-title">I Miei Progetti</h2>
                 <div class="divider mx-auto"></div>
               </div>
             </div>
             <div class="row flex-grow-1 align-items-center justify-content-center">
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card shadow-lg" style="height: 400px; border-radius: 10px; overflow: hidden;">
-                  <img src="sito.png" class="card-img-top" alt="Sito Web Personale" style="height: 200px; object-fit: cover;">
-                  <div class="card-body d-flex flex-column">
-                    <h5 class="card-title fw-bold">Sito Web Personale</h5>
-                    <p class="card-text flex-grow-1">Un sito web personale sviluppato con HTML, CSS e JavaScript(Vue.js).</p>
-                    <div class="d-flex flex-wrap gap-1 mt-auto mb-2">
-                      <span class="badge bg-secondary">HTML</span>
-                      <span class="badge bg-secondary">Vue.js</span>
-                      <span class="badge bg-secondary">Bootstrap</span>
-                      <span class="badge bg-secondary">JavaScript</span>
-                    </div>
-                    <a href="https://galluccisimone.it/" target="_blank" class="btn btn-primary w-100" style="border-radius: 8px; font-weight: 500; padding: 10px;"><i class="fas fa-external-link-alt me-2"></i>Visita Progetto</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card shadow-lg" style="height: 400px; border-radius: 10px; overflow: hidden;">
-                  <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-code" style="font-size: 80px; color: white; opacity: 0.8;"></i>
+              <div class="col-lg-4 col-md-6 mb-4" v-for="project in projects" :key="project.title">
+                <div class="card shadow-lg project-card">
+                  <img v-if="project.image" :src="project.image" class="card-img-top project-card-img" :alt="project.title">
+                  <div v-else class="project-card-placeholder">
+                    <i class="fas fa-code project-icon"></i>
                   </div>
                   <div class="card-body d-flex flex-column">
-                    <h5 class="card-title fw-bold">Mini Software</h5>
-                    <p class="card-text flex-grow-1">Piccoli software e applicazioni sviluppate in vari linguaggi di programmazione.</p>
+                    <h5 class="card-title fw-bold">{{ project.title }}</h5>
+                    <p class="card-text flex-grow-1">{{ project.description }}</p>
                     <div class="d-flex flex-wrap gap-1 mt-auto mb-2">
-                      <span class="badge bg-secondary">C</span>
-                      <span class="badge bg-secondary">C++</span>
-                      <span class="badge bg-secondary">Python</span>
-                      <span class="badge bg-secondary">JavaScript</span>
+                      <span class="badge bg-secondary" v-for="tech in project.technologies" :key="tech">{{ tech }}</span>
                     </div>
-                    <a href="Prog.Soft.html" target="_blank" class="btn btn-primary w-100" style="border-radius: 8px; font-weight: 500; padding: 10px;"><i class="fas fa-external-link-alt me-2"></i>Visita Progetti</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card shadow-lg" style="height: 400px; border-radius: 10px; overflow: hidden;">
-                  <img src="terminale.png" class="card-img-top" alt="Terminale Linux" style="height: 200px; object-fit: cover;">
-                  <div class="card-body d-flex flex-column">
-                    <h5 class="card-title fw-bold">Terminale Linux</h5>
-                    <p class="card-text flex-grow-1">Un terminale linux sviluppato in html, JavaScript e css.</p>
-                    <div class="d-flex flex-wrap gap-1 mt-auto mb-2">
-                      <span class="badge bg-secondary">CSS</span>
-                      <span class="badge bg-secondary">HTML</span>
-                      <span class="badge bg-secondary">JavaScript</span>
-                    </div>
-                    <a href="https://simone-gallucci.github.io/Terminale/" target="_blank" class="btn btn-primary w-100" style="border-radius: 8px; font-weight: 500; padding: 10px;"><i class="fas fa-external-link-alt me-2"></i>Visita Progetto</a>
+                    <a v-if="project.link" :href="project.link" target="_blank" rel="noopener noreferrer" class="btn btn-primary w-100 project-btn"><i class="fas fa-external-link-alt me-2"></i>Visita Progetto</a>
                   </div>
                 </div>
               </div>
@@ -258,8 +165,8 @@
 
         <!-- Contatto -->
         <section v-if="currentSection === 'contact'" class="section-container contact-section fade-in">
-          <div class="container" style="height: 85vh; display: flex; flex-direction: column;">
-            <div class="row" style="padding-top: 60px;">
+          <div class="container section-flex-container">
+            <div class="row section-header-row">
               <div class="col-12 text-center mb-3">
                 <h2 class="section-title">Contattami</h2>
                 <div class="divider mx-auto"></div>
@@ -314,7 +221,7 @@
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-2">
       <div class="container">
-        <p class="mb-0" style="font-size: 0.8rem;">© 2023 Simone Gallucci. Tutti i diritti riservati.</p>
+        <p class="mb-0">© 2023 Simone Gallucci. Tutti i diritti riservati.</p>
       </div>
     </footer>
 
@@ -325,6 +232,84 @@
         data() {
           return {
             currentSection: 'home',
+            home: {
+              title: 'Ciao, sono Simone Gallucci',
+              subtitle: 'Sono uno sviluppatore frontend e backend(Full stack).',
+              buttonText: 'Contattami'
+            },
+            about: {
+              title: 'Chi Sono',
+              image: 'ME.jpg',
+              description: 'Sono Simone, uno sviluppatore web con competenze nelle tecnologie frontend e backend moderne.',
+              education: [
+                {
+                  title: 'Istituto Tecnico Industriale - Indirizzo Informatico',
+                  description: 'Diploma di Istruzione Tecnica, 5 anni',
+                  since: '2019 - 2024'
+                },
+                {
+                  title: 'ITS - ICT & Cyber Security',
+                  description: 'Corso biennale post-diploma in ambito informatico',
+                  since: '2024 - 2026'
+                }
+              ],
+              experience: [
+                {
+                  title: 'Tecnico',
+                  description: 'Centro Sportivo MTA',
+                  since: '2023 - 2024'
+                },
+                {
+                  title: 'Stage',
+                  description: 'LogicalSystem',
+                  since: 'Estate 2025'
+                },
+                {
+                  title: 'Lavoro',
+                  description: 'LogicalSystem',
+                  since: '2026 - Presente'
+                }
+              ]
+            },
+            skills: {
+              title: 'Le Mie Competenze',
+              technical: [
+                { name: 'HTML/CSS/JavaScript', level: 95 },
+                { name: 'C/C++/C#', level: 90 },
+                { name: 'Python', level: 85 },
+                { name: 'Windows/Linux', level: 90 }
+              ],
+              professional: [
+                { name: 'Problem Solving', level: 95 },
+                { name: 'Lavoro di Squadra', level: 90 },
+                { name: 'Gestione Progetti', level: 85 }
+              ]
+            },
+            projects: [
+              {
+                title: 'Sito Web Personale',
+                description:
+                  'Un sito web personale sviluppato con HTML, CSS e JavaScript(Vue.js) per mostrare le mie competenze e progetti.',
+                image: 'sito.png',
+                technologies: ['HTML', 'Vue.js', 'Bootstrap', 'JavaScript'],
+                link: 'https://galluccisimone.it/'
+              },
+              {
+                title: 'Mini Software',
+                description:
+                  'Collezione di piccoli software e applicazioni sviluppate in vari linguaggi di programmazione.',
+                technologies: ['C', 'C++', 'Python', 'JavaScript', 'etc.'],
+                link: 'Prog.Soft.html'
+              },
+              {
+                title: 'Terminale Linux',
+                description:
+                  'Un terminale linux sviluppato in html, JavaScript e css.',
+                image: 'terminale.png',
+                technologies: ['CSS', 'HTML', 'JavaScript'],
+                link: 'https://simone-gallucci.github.io/Terminale/'
+              }
+            ],
             contactForm: {
               name: '',
               email: '',

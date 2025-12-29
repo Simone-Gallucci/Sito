@@ -100,12 +100,82 @@ footer {
   z-index: 1000;
 }
 
+footer p {
+  font-size: 0.8rem;
+}
+
 .about-img {
   width: 75%;
+  border: 2px solid black;
 }
 
 @media (max-width: 576px) {
   .about-img {
     width: 45%;
   }
+}
+
+/* Section row heights */
+.section-row {
+  height: 85vh;
+}
+
+/* Container flex for skills/projects/contact */
+.section-flex-container {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-header-row {
+  padding-top: 60px;
+}
+
+/* About section text spacing */
+.about-description {
+  margin-bottom: 0.5rem;
+}
+
+.info-title {
+  margin-bottom: 0.2rem;
+}
+
+.info-description {
+  margin-bottom: 0.1rem;
+}
+
+.info-date {
+  margin-bottom: 0;
+}
+
+/* Project cards */
+.project-card {
+  height: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.project-card-img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-card-placeholder {
+  height: 200px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-icon {
+  font-size: 80px;
+  color: white;
+  opacity: 0.8;
+}
+
+.project-btn {
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 10px;
 }
