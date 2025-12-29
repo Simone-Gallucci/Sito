@@ -179,3 +179,123 @@ footer p {
   font-weight: 500;
   padding: 10px;
 }
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  /* Riduci padding header su mobile */
+  .section-header-row {
+    padding-top: 80px;
+  }
+  
+  /* Riduci altezza section su mobile */
+  .section-row,
+  .section-flex-container {
+    height: auto;
+    min-height: 85vh;
+  }
+  
+  /* Home section ottimizzata */
+  .home-section h1 {
+    font-size: 1.8rem !important;
+  }
+  
+  .home-section .lead {
+    font-size: 1rem;
+  }
+  
+  .home-section .btn-lg {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+  
+  /* About section su mobile */
+  .about-section .col-lg-5,
+  .about-section .col-lg-7 {
+    text-align: right;
+  }
+  
+  .about-img {
+    margin-bottom: 1rem;
+  }
+  
+  /* Skills section su mobile */
+  .skill-item h5 {
+    font-size: 0.85rem;
+  }
+  
+  .skill-item span {
+    font-size: 0.85rem;
+  }
+  
+  .progress {
+    height: 0.8rem;
+  }
+  
+  /* Projects card su mobile */
+  .project-card {
+    height: auto;
+    min-height: 350px;
+  }
+  
+  .project-card-img,
+  .project-card-placeholder {
+    height: 150px;
+  }
+  
+  .project-icon {
+    font-size: 60px;
+  }
+  
+  /* Contact form su mobile */
+  .contact-form {
+    margin-top: 1rem;
+  }
+  
+  input,
+  textarea {
+    font-size: 0.85rem;
+  }
+  
+  /* Badge tecnologie più piccoli */
+  .badge {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.4rem;
+  }
+  
+  /* Margini sezioni ottimizzati */
+  .section-container {
+    padding-bottom: 6rem;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Extra small devices ottimizzazioni */
+  .home-section h1 {
+    font-size: 1.5rem !important;
+  }
+  
+  .section-header-row {
+    padding-top: 70px;
+  }
+  
+  /* Navbar brand più piccolo */
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+  
+  /* Skills columns full width */
+  .skills-section .col-md-6 {
+    margin-bottom: 2rem;
+  }
+  
+  /* Project cards centrate */
+  .projects-section .col-lg-4 {
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Contact info migliore spacing */
+  .contact-info {
+    margin-bottom: 1.5rem;
+  }
+}
